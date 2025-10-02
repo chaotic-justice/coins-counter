@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import LocaleSelector from '@/components/header/LocaleSelector';
+import LocaleSelector from '@/components/commons/locale-selector';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,7 +21,6 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <LocaleSelector />
-      {/* <LocaleSelector /> */}
       <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>
           count is <Num>{count}</Num>

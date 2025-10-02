@@ -1,3 +1,12 @@
 {
-  "greetings.hello": "dancing snow"
+  "greetings.hello": "dancing snow",
+  "header.appName": "现金柜台",
+  "header.title": "行云流水",
+  "header.subtitle": "Your gateway to seamless experience",
+  "counter.description": "清点你的钞票，并将它们平均分成三堆。",
+  "counter.billsLabel": "纸币",
+  "counter.billsForm.title": "纸币计数器",
+  "counter.billsForm.description": "输入每种面额的纸币数量",
+  "counter.billsForm.total": "总额",
+  "counter.billsForm.totalCaption": "所有计算过的钞票的总价值"
 }

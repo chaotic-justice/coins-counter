@@ -1,5 +1,20 @@
 {
   "greetings": {
     "hello": "farming snow"
+  },
+  "header": {
+    "appName": "Cash Counter",
+    "title": "as smooth as flowing clouds and water",
+    "subtitle": "Your gateway to seamless experience"
+  },
+  "counter": {
+    "description": "Count your bills and distribute them evenly across 3 stacks.",
+    "billsLabel": "Bills",
+    "billsForm": {
+      "title": "Bills Counter",
+      "description": "Enter the number of bills you have for each denomination.",
+      "total": "Total Amount",
+      "totalCaption": "Total value of all bills counted"
+    }
   }
 }
