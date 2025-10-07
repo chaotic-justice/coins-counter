@@ -9,11 +9,11 @@ interface BillCounterFormProps {
 }
 
 const BILL_DENOMINATIONS = [
-  { value: 100, label: '$100 Bills', field: 'hundreds' as const },
-  { value: 50, label: '$50 Bills', field: 'fifties' as const },
-  { value: 20, label: '$20 Bills', field: 'twenties' as const },
-  { value: 10, label: '$10 Bills', field: 'tens' as const },
-  { value: 5, label: '$5 Bills', field: 'fives' as const },
+  { value: 100, label: '$100 Bills', field: '100' as const },
+  { value: 50, label: '$50 Bills', field: '50' as const },
+  { value: 20, label: '$20 Bills', field: '20' as const },
+  { value: 10, label: '$10 Bills', field: '10' as const },
+  { value: 5, label: '$5 Bills', field: '5' as const },
 ];
 
 const BillCounterForm: React.FC<BillCounterFormProps> = ({ form }) => {
@@ -30,6 +30,7 @@ const BillCounterForm: React.FC<BillCounterFormProps> = ({ form }) => {
               <FormControl>
                 <Input
                   {...field}
+                  value={field.value.toString()}
                   type="number"
                   min="0"
                   onChange={(e) => field.onChange(parseInt(e.target.value) || 0)}

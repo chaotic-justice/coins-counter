@@ -52,7 +52,6 @@ export function CashCounter() {
     console.log('cleanValue', cleanValue)
     // If empty after removing zeros, use 0
     const numValue = cleanValue === "" ? 0 : parseInt(cleanValue, 10);
-    console.log('numValue', numValue)
     setBills((prev) => ({
       ...prev,
       [denomination]: numValue,
@@ -151,7 +150,7 @@ export function CashCounter() {
                     id={billType.key}
                     type="number"
                     min="0"
-                    value={bills[billType.key]}
+                    value={bills[billType.key].toString()}
                     onChange={(e) =>
                       handleInputChange(billType.key, e.target.value)
                     }

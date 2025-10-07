@@ -7,22 +7,22 @@ import {
 } from "@/schemas/billCounter";
 
 const DENOMINATIONS = [
-	{ value: 100, label: "Hundreds", field: "hundreds" as const },
-	{ value: 50, label: "Fifties", field: "fifties" as const },
-	{ value: 20, label: "Twenties", field: "twenties" as const },
-	{ value: 10, label: "Tens", field: "tens" as const },
-	{ value: 5, label: "Fives", field: "fives" as const },
+	{ value: 100, label: "Hundreds", field: "100" as const },
+	{ value: 50, label: "Fifties", field: "50" as const },
+	{ value: 20, label: "Twenties", field: "20" as const },
+	{ value: 10, label: "Tens", field: "10" as const },
+	{ value: 5, label: "Fives", field: "5" as const },
 ];
 
 export const useBillCounter = () => {
 	const form = useForm<BillCounterFormData>({
 		resolver: zodResolver(billCounterSchema),
 		defaultValues: {
-			fives: 0,
-			tens: 0,
-			twenties: 0,
-			fifties: 0,
-			hundreds: 0,
+			5: 0,
+			10: 0,
+			20: 0,
+			50: 0,
+			100: 0,
 		},
 	});
 
@@ -40,11 +40,11 @@ export const useBillCounter = () => {
 
 	const resetForm = () => {
 		form.reset({
-			fives: 0,
-			tens: 0,
-			twenties: 0,
-			fifties: 0,
-			hundreds: 0,
+			5: 0,
+			10: 0,
+			20: 0,
+			50: 0,
+			100: 0,
 		});
 	};
 
