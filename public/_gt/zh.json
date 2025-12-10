@@ -1,0 +1,12 @@
+{
+  "greetings.hello": "农业雪",
+  "header.appName": "现金计数器",
+  "header.title": "行云流水般流畅",
+  "header.subtitle": "您通往无缝体验的门户",
+  "counter.description": "清点您的钞票并将它们平均分配到3堆中。",
+  "counter.billsLabel": "账单",
+  "counter.billsForm.title": "账单计数器",
+  "counter.billsForm.description": "输入您每种面额纸币的数量。",
+  "counter.billsForm.total": "总金额",
+  "counter.billsForm.totalCaption": "所有已清点钞票的总价值"
+}

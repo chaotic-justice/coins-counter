@@ -3,11 +3,11 @@ import { GTProvider } from "gt-react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import gtConfig from "../gt.config.json";
-import dictionary from "./dictionary.json";
 import "./index.css";
-import loadTranslations from "./lib/loadTranslations.ts";
 
 // Import the generated route tree
+import dictionary from "./dictionary";
+import loadTranslations from "./lib/loadTranslations";
 import { routeTree } from "./routeTree.gen";
 
 // Create a new router instance

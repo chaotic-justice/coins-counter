@@ -1,6 +1,6 @@
 // src/components/Header.tsx
 import { Link } from '@tanstack/react-router'
-import { useTranslations } from 'gt-react'
+import { T, useTranslations, Var } from 'gt-react'
 import { SquareMenuIcon, X } from 'lucide-react'
 import { useState } from 'react'
 import LocaleSelector from './locale-selector'
@@ -8,9 +8,10 @@ import { Button } from '../ui/button'
 
 
 export function Header() {
-  const links = []
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const d = useTranslations()
+  const links = [{ to: '/', label: d('navigation.home') }, { to: '/about', label: d('navigation.about') }, { to: '/counting', label: 'version 2' }]
+
 
   return (
     <header className="px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -36,11 +37,11 @@ export function Header() {
         </div>
 
         {/* Center section - Navigation */}
-        {/* <ul className="items-center justify-center flex-1 hidden gap-6 md:flex">
+        <ul className="items-center justify-center flex-1 hidden gap-6 md:flex">
           {links.map((link) => (
             <li key={link.label}>
               <Link
-                to={`${link.to ? link.to : '/about'}`}
+                to={link.to}
                 aria-label={link.label}
                 title={link.label}
                 className="font-normal tracking-wide transition-colors duration-200"
@@ -49,7 +50,7 @@ export function Header() {
               </Link>
             </li>
           ))}
-        </ul> */}
+        </ul>
 
         {/* Right section */}
         <div className="items-center justify-end flex-1 hidden md:flex gap-x-6">
@@ -102,7 +103,7 @@ export function Header() {
                     </Button>
                   </div>
                 </div>
-                {/* <nav>
+                <nav>
                   <ul className="space-y-4">
                     {links.map((link) => (
                       <li key={link.label}>
@@ -118,7 +119,7 @@ export function Header() {
                       </li>
                     ))}
                   </ul>
-                </nav> */}
+                </nav>
                 <div className="pt-4">
                   <div className="flex items-center justify-between gap-x-5">
                     {/* <HeaderLinks /> */}

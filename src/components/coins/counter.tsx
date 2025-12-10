@@ -7,16 +7,36 @@ import { useBillCounter } from '@/lib/useBillCounter';
 import BillCounterForm from './form';
 import BillCounterResults from './result';
 import { coinsService } from '@/services/api';
+import { useTranslations } from 'gt-react';
+import { canDistributeBillsEvenlyDP } from '@/lib/algo';
+import { useState } from 'react';
+import type { StackStats } from '@/types/api';
 
 const BillCounter: React.FC = () => {
+  const d = useTranslations();
   const { form, calculateTotal, resetForm } = useBillCounter();
-  const [results, setResults] = React.useState<ReturnType<typeof calculateTotal> | null>(null);
+  const [results, setResults] = useState<ReturnType<typeof calculateTotal> | null>(null);
+  const [stackStats, setStackStats] = useState<StackStats[] | null>(null)
 
   const onSubmit = async (data: Parameters<typeof calculateTotal>[0]) => {
-    console.log('data', data)
-    // const calculatedResults = calculateTotal(data);
-    const res = await coinsService.post('/bills/perfect', data)
-    console.log('res', res)
+    const input = {
+      five: data[5],
+      ten: data[10],
+      twenty: data[20],
+      fifty: data[50],
+      hundred: data[100],
+    }
+    const evenly = canDistributeBillsEvenlyDP(input)
+    console.log('evenly', evenly)
+    const calc = calculateTotal(data);
+    if (evenly.isDivisibleByThree && evenly.canBeEvenlyDistributed) {
+      const res = await coinsService.post('/bills/perfect', data)
+      console.log('res', res)
+      setStackStats(res)
+    } else {
+      console.log('bad requeast')
+      console.log('calc', calc)
+    }
   };
 
   // Get form values and watch for changes
@@ -66,11 +86,11 @@ const BillCounter: React.FC = () => {
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="flex items-center gap-2">
-              <Calculator className="w-6 h-6 text-accent-foreground" />
-              Bills Counter
+              <Calculator className="w-6 h-6" />
+              {d("header.appName")}
             </CardTitle>
             <CardDescription>
-              Enter the number of bills to calculate the total amount
+              {d("counter.description")}
             </CardDescription>
           </div>
           <Button
@@ -80,7 +100,7 @@ const BillCounter: React.FC = () => {
             className="flex items-center gap-2"
           >
             <RotateCcw className="w-4 h-4" />
-            Reset
+            {d('commons.reset')}
           </Button>
         </div>
       </CardHeader>
@@ -92,13 +112,13 @@ const BillCounter: React.FC = () => {
 
             <div className="flex gap-4">
               <Button type="submit" className="flex-1">
-                Split into 3 Stacks
+                {d('counter.form.splitBtn')}
               </Button>
             </div>
           </form>
         </Form>
 
-        {isDirty && results && <BillCounterResults results={results} />}
+        {results && stackStats && <BillCounterResults results={results} stackStats={stackStats} />}
       </CardContent>
     </Card>
   );

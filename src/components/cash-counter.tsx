@@ -1,8 +1,5 @@
 "use client";
 
-import { useTranslations } from "gt-react";
-import { Calculator, DollarSign, Minus, Plus, Users } from "lucide-react";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,7 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "gt-react";
+import { Calculator, DollarSign, Minus, Plus, Users } from "lucide-react";
+import { useState } from "react";
 
 interface BillCount {
   fives: number;
@@ -46,10 +45,10 @@ export function CashCounter() {
   };
 
   const handleInputChange = (denomination: keyof BillCount, value: string) => {
-    // Remove leading zeros and get the clean value
-    console.log('value', value)
+  // Remove leading zeros and get the clean value
+    console.log("value", value);
     const cleanValue = value.replace(/^0+/, "");
-    console.log('cleanValue', cleanValue)
+    console.log("cleanValue", cleanValue);
     // If empty after removing zeros, use 0
     const numValue = cleanValue === "" ? 0 : parseInt(cleanValue, 10);
     setBills((prev) => ({
@@ -123,11 +122,9 @@ export function CashCounter() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <DollarSign className="w-5 h-5 text-success" />
-              {d("counter.billsForm.title")}
+              {d("counter.form.title")}
             </CardTitle>
-            <CardDescription>
-              {d("counter.billsForm.description")}
-            </CardDescription>
+            <CardDescription>{d("counter.form.description")}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {billTypes.map((billType) => (
@@ -183,7 +180,7 @@ export function CashCounter() {
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl">
-                {d("counter.billsForm.total")}
+                {d("counter.form.total")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -191,7 +188,7 @@ export function CashCounter() {
                 ${totalAmount.toLocaleString()}
               </div>
               <p className="mt-2 text-muted-foreground">
-                {d("counter.billsForm.totalCaption")}
+                {d("counter.form.totalCaption")}
               </p>
             </CardContent>
           </Card>

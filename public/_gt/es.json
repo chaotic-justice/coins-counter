@@ -1,0 +1,12 @@
+{
+  "greetings.hello": "cultivando nieve",
+  "header.appName": "Contador de Efectivo",
+  "header.title": "tan fluido como las nubes y el agua que fluyen",
+  "header.subtitle": "Tu puerta de entrada a una experiencia fluida",
+  "counter.description": "Cuenta tus billetes y distribúyelos uniformemente en 3 pilas.",
+  "counter.billsLabel": "Facturas",
+  "counter.billsForm.title": "Contador de Facturas",
+  "counter.billsForm.description": "Ingrese la cantidad de billetes que tiene de cada denominación.",
+  "counter.billsForm.total": "Monto Total",
+  "counter.billsForm.totalCaption": "Valor total de todos los billetes contados"
+}
