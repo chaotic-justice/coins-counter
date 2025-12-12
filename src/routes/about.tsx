@@ -1,16 +1,16 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { useTranslations } from 'gt-react';
+import BentoComboPicker from "@/components/coins/bento-combo-picker";
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/about')({
-  component: About,
-})
+export const Route = createFileRoute("/about")({
+	component: About,
+});
 
 function About() {
-  const d = useTranslations();
-
-  return <div className="container p-4 py-8 mx-auto">
-    <div>
-      {d('greetings.hello')}
-    </div>
-  </div>
+	return (
+		<div className="container p-4 py-8 mx-auto">
+			<div>
+				<BentoComboPicker />
+			</div>
+		</div>
+	);
 }

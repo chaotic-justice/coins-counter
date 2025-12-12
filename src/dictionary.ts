@@ -21,15 +21,21 @@ const dictionary = {
 	counter: {
 		description: "Count your bills and distribute them evenly across 3 stacks.",
 		billsLabel: "Bills",
+		mathWork: "Math Work",
+		stackDetails: "Stack Details",
+		stackLabel: "Stack",
+		stacksLabel: "Stacks",
 		form: {
 			title: "Bills Counter",
 			description: "Enter the number of bills you have for each denomination.",
 			total: "Total Amount",
 			totalCaption: "Total value of all bills counted",
 			splitBtn: "Split into 3 Stacks",
-		},
-		results: {
-			title: "Breakdown of Bills",
+			adjustmentRequired:
+				"Either total amount isn't divisible by 3, or there are insufficient bills to split evenly. Please make the following adjustments.",
+			removing: "Removing ",
+			multiChoiceLabel: "{qty} of bills {bill}",
+			newTotal: "New Total: ${total}",
 		},
 	},
 };

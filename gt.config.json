@@ -1,14 +1,11 @@
 {
-  "$schema": "https://assets.gtx.dev/config-schema.json",
-  "files": {
-    "gt": {
-      "output": "public/_gt/[locale].json"
-    }
-  },
-  "defaultLocale": "en",
-  "locales": [
-    "es",
-    "zh"
-  ],
-  "_versionId": "faa3d6312d8d300715f3580771db57a65cd010ed225f7a5a37dd2369b0bac17e"
+	"$schema": "https://assets.gtx.dev/config-schema.json",
+	"files": {
+		"gt": {
+			"output": "./src/_gt/[locale].json"
+		}
+	},
+	"defaultLocale": "en",
+	"locales": ["zh"],
+	"_versionId": "faa3d6312d8d300715f3580771db57a65cd010ed225f7a5a37dd2369b0bac17e"
 }
