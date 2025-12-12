@@ -1,4 +1,3 @@
-import BentoComboPicker from "@/components/coins/bento-combo-picker";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/about")({
@@ -8,9 +7,7 @@ export const Route = createFileRoute("/about")({
 function About() {
 	return (
 		<div className="container p-4 py-8 mx-auto">
-			<div>
-				<BentoComboPicker />
-			</div>
+			<div>about</div>
 		</div>
 	);
 }

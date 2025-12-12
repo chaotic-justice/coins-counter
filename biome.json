@@ -380,7 +380,9 @@
 						"noUnreachable": "off",
 						"noUnreachableSuper": "off"
 					},
-					"style": { "useConst": "error" },
+					"style": {
+						"useConst": "error"
+					},
 					"suspicious": {
 						"noClassAssign": "off",
 						"noDuplicateClassMembers": "off",
@@ -437,7 +439,7 @@
 		{
 			"includes": ["**/*.{ts,tsx}"],
 			"linter": {
-				"rules": { "style": { "useComponentExportOnlyModules": "error" } }
+				"rules": { "style": { "useComponentExportOnlyModules": "off" } }
 			}
 		},
 		{
