@@ -6,12 +6,14 @@ import { useState } from 'react'
 import { Button } from "../ui/button";
 import LocaleSelector from "./locale-selector";
 
-
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const d = useTranslations()
-  const links = [{ to: '/', label: d('navigation.home') }, { to: '/about', label: d('navigation.about') }, { to: '/counting', label: 'version 2' }]
-
+  const links = [
+			{ to: "/", label: d("navigation.home") },
+			{ to: "/about", label: d("navigation.about") },
+			{ to: "/version2", label: "version 2" },
+		];
 
   return (
 			<header className="px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -20,13 +22,13 @@ export function Header() {
 					<div className="flex items-center flex-1 md:gap-x-12">
 						<Link
 							to="/"
+							className="flex items-center space-x-1"
 							activeProps={{
 								className: "font-bold",
 							}}
 							activeOptions={{ exact: true }}
 							aria-label="Landing Page Boilerplate"
 							title="Landing Page Boilerplate"
-							className="flex items-center space-x-1 font-bold"
 						>
 							<img
 								alt="Logo"
@@ -49,10 +51,10 @@ export function Header() {
 									to={link.to}
 									aria-label={link.label}
 									title={link.label}
+									className="tracking-wide transition-colors duration-200"
 									activeProps={{
 										className: "font-bold",
 									}}
-									className="font-normal tracking-wide transition-colors duration-200"
 								>
 									{link.label}
 								</Link>

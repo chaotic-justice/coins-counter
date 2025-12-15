@@ -9,10 +9,13 @@ export interface StackStats {
 	distribution: Bills;
 }
 
-export type Combo = {
+export type SubtractionCombo = {
 	newTotal: number;
 	amountSubtracted: number;
 	combination: Bills | null;
 	description: string;
 };
 
+export interface SubtractionStackStats extends SubtractionCombo {
+	stackStats: StackStats[];
+}

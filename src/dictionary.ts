@@ -5,7 +5,7 @@ const dictionary = {
 		reset: "Reset",
 	},
 	greetings: {
-		hello: "Hello, world!",
+		hello: "How many cats in your room?",
 		welcome: "Welcome to our app!",
 	},
 	navigation: {
@@ -19,9 +19,9 @@ const dictionary = {
 		subtitle: "Your gateway to seamless experience",
 	},
 	counter: {
-		description: "Count your bills and distribute them evenly across 3 stacks.",
 		billsLabel: "Bills",
 		mathWork: "Math Work",
+		mathWorkToast: "Math work required",
 		stackDetails: "Stack Details",
 		stackLabel: "Stack",
 		stacksLabel: "Stacks",
@@ -34,7 +34,7 @@ const dictionary = {
 			adjustmentRequired:
 				"Either total amount isn't divisible by 3, or there are insufficient bills to split evenly. Please make the following adjustments.",
 			removing: "Removing ",
-			multiChoiceLabel: "{qty} of bills {bill}",
+			multiChoiceLabel: "{qty} piece of bills {bill}",
 			newTotal: "New Total: ${total}",
 		},
 	},

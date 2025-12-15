@@ -92,7 +92,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="min-h-screen p-4 font-sans antialiased bg-background md:p-8">
+			<body
+				id="root"
+				className="min-h-screen p-4 font-sans antialiased bg-background md:p-8"
+			>
 				<Header />
 				<main className="flex-1">{children}</main>
 				<Toaster richColors />

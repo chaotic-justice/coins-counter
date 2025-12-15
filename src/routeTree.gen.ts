@@ -9,13 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as CountingRouteImport } from './routes/counting'
+import { Route as Version2RouteImport } from './routes/version2'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiBillsPerfectRouteImport } from './routes/api/bills.perfect'
+import { Route as ApiBillsImperfectRouteImport } from './routes/api/bills.imperfect'
 
-const CountingRoute = CountingRouteImport.update({
-  id: '/counting',
-  path: '/counting',
+const Version2Route = Version2RouteImport.update({
+  id: '/version2',
+  path: '/version2',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -28,44 +30,78 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiBillsPerfectRoute = ApiBillsPerfectRouteImport.update({
+  id: '/api/bills/perfect',
+  path: '/api/bills/perfect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiBillsImperfectRoute = ApiBillsImperfectRouteImport.update({
+  id: '/api/bills/imperfect',
+  path: '/api/bills/imperfect',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/counting': typeof CountingRoute
+  '/version2': typeof Version2Route
+  '/api/bills/imperfect': typeof ApiBillsImperfectRoute
+  '/api/bills/perfect': typeof ApiBillsPerfectRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/counting': typeof CountingRoute
+  '/version2': typeof Version2Route
+  '/api/bills/imperfect': typeof ApiBillsImperfectRoute
+  '/api/bills/perfect': typeof ApiBillsPerfectRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/counting': typeof CountingRoute
+  '/version2': typeof Version2Route
+  '/api/bills/imperfect': typeof ApiBillsImperfectRoute
+  '/api/bills/perfect': typeof ApiBillsPerfectRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/counting'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/version2'
+    | '/api/bills/imperfect'
+    | '/api/bills/perfect'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/counting'
-  id: '__root__' | '/' | '/about' | '/counting'
+  to:
+    | '/'
+    | '/about'
+    | '/version2'
+    | '/api/bills/imperfect'
+    | '/api/bills/perfect'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/version2'
+    | '/api/bills/imperfect'
+    | '/api/bills/perfect'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  CountingRoute: typeof CountingRoute
+  Version2Route: typeof Version2Route
+  ApiBillsImperfectRoute: typeof ApiBillsImperfectRoute
+  ApiBillsPerfectRoute: typeof ApiBillsPerfectRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/counting': {
-      id: '/counting'
-      path: '/counting'
-      fullPath: '/counting'
-      preLoaderRoute: typeof CountingRouteImport
+    '/version2': {
+      id: '/version2'
+      path: '/version2'
+      fullPath: '/version2'
+      preLoaderRoute: typeof Version2RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -82,13 +118,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/bills/perfect': {
+      id: '/api/bills/perfect'
+      path: '/api/bills/perfect'
+      fullPath: '/api/bills/perfect'
+      preLoaderRoute: typeof ApiBillsPerfectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/bills/imperfect': {
+      id: '/api/bills/imperfect'
+      path: '/api/bills/imperfect'
+      fullPath: '/api/bills/imperfect'
+      preLoaderRoute: typeof ApiBillsImperfectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  CountingRoute: CountingRoute,
+  Version2Route: Version2Route,
+  ApiBillsImperfectRoute: ApiBillsImperfectRoute,
+  ApiBillsPerfectRoute: ApiBillsPerfectRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
