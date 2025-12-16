@@ -1,9 +1,9 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
+	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "dividing-bills-in-duluth",
 	"compatibility_date": "2025-12-15",
 	"compatibility_flags": ["nodejs_compat"],
-	"main": "./src/server.ts",
+	"main": "@tanstack/react-start/server-entry",
 	"observability": {
 		"enabled": true
 	},

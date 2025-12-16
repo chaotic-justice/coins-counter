@@ -2,7 +2,6 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
 import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
@@ -17,9 +16,9 @@ export default defineConfig({
 		tanstackStart(),
 		react(),
 	],
-	resolve: {
-		alias: {
-			"@": path.resolve(__dirname, "./src"),
-		},
-	},
+	// resolve: {
+	// 	alias: {
+	// 		"@": path.resolve(__dirname, "./src"),
+	// 	},
+	// },
 });
