@@ -35,7 +35,7 @@ export function CashCounter() {
 		hundreds: 0,
 	});
 
-	const [stacks, setStacks] = useState<number>(1);
+	const [stacks, _setStacks] = useState<number>(1);
 
 	const updateBillCount = (
 		denomination: keyof BillCount,

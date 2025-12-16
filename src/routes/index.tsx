@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import BillCounterForm from "@/components/coins/form";
 import BillCounterResults from "@/components/coins/result";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,6 @@ import {
 	CardContent,
 	CardDescription,
 	CardHeader,
-	CardTitle,
 } from "@/components/ui/card";
 import { Form } from "@/components/ui/form";
 import {
@@ -17,6 +15,7 @@ import {
 import { useBillCounter } from "@/lib/useBillCounter";
 import { deepEqual } from "@/lib/utils";
 import type { StackStats, SubtractionStackStats } from "@/types/api";
+import { createFileRoute } from "@tanstack/react-router";
 import { useTranslations } from "gt-react";
 import { Calculator, RotateCcw } from "lucide-react";
 import React, { useEffect, useState } from "react";
