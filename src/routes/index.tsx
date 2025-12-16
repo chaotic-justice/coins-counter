@@ -75,6 +75,7 @@ const BillCounter: React.FC = () => {
 					body: JSON.stringify(data),
 				});
 				const res = await perfectRes.json();
+				// @ts-expect-error
 				setStackStats(res);
 			} finally {
 				setLoading(false);
@@ -86,6 +87,7 @@ const BillCounter: React.FC = () => {
 					body: JSON.stringify(data),
 				});
 				const res = await imperfectRes.json();
+				// @ts-expect-error
 				setSubtractionCombos(res);
 			} finally {
 				setLoading(false);

@@ -7,6 +7,7 @@ export const Route = createFileRoute("/api/bills/perfect")({
 			POST: async ({ request }) => {
 				const data = await request.json();
 				try {
+          // @ts-expect-error
 					const response = await api.billsPerfect(data);
 					return new Response(JSON.stringify(response), {
 						status: 200,

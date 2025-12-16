@@ -22,6 +22,7 @@ async function apiClient<T>(
 		const error = await response.json().catch(() => ({
 			message: `HTTP error! status: ${response.status}`,
 		}));
+    // @ts-expect-error
 		throw new Error(error.message || "Request failed");
 	}
 

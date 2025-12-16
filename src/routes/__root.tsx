@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import dictionary from "@/dictionary";
 import loadTranslations from "@/lib/loadTranslations";
 import { seo } from "@/lib/seo";
-import appCss from "@/styles/app.css?url";
+import appCss from "../styles.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
@@ -92,10 +92,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body
-				id="root"
-				className="min-h-screen p-4 font-sans antialiased bg-background md:p-8"
-			>
+			<body className="min-h-screen p-4 font-sans antialiased bg-background md:p-8">
 				<Header />
 				<main className="flex-1">{children}</main>
 				<Toaster richColors />
