@@ -1,7 +1,8 @@
 import type { BillCounterFormData } from "@/schemas/billCounter";
 import type { StackStats, SubtractionStackStats } from "@/types/api";
+import { env } from "cloudflare:workers";
 
-const BASE_URL = import.meta.env.VITE_COMPUTING_API_URL;
+const BASE_URL = env.VITE_COMPUTING_API_URL;
 
 // Generic fetch wrapper with proper error handling
 async function apiClient<T>(
@@ -22,7 +23,7 @@ async function apiClient<T>(
 		const error = await response.json().catch(() => ({
 			message: `HTTP error! status: ${response.status}`,
 		}));
-    // @ts-expect-error
+		// @ts-expect-error
 		throw new Error(error.message || "Request failed");
 	}
 

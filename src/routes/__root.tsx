@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 import dictionary from "@/dictionary";
 import loadTranslations from "@/lib/loadTranslations";
 import { seo } from "@/lib/seo";
-import appCss from "../styles.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
@@ -17,6 +16,7 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { GTProvider } from "gt-react";
+import appCss from "../styles.css?url";
 
 export const Route = createRootRouteWithContext<{
 	queryClient: QueryClient;
@@ -74,8 +74,8 @@ function RootComponent() {
 	return (
 		<GTProvider
 			{...gtConfig}
-			projectId={import.meta.env.VITE_GT_PROJECT_ID}
-			devApiKey={import.meta.env.VITE_GT_API_KEY}
+			// projectId={env.VITE_GT_PROJECT_ID}
+			// devApiKey={env.GT_API_KEY}
 			loadTranslations={loadTranslations}
 			dictionary={dictionary}
 		>

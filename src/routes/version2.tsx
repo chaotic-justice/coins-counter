@@ -115,7 +115,7 @@ export function CashCounter() {
 					</h1>
 				</div>
 				<p className="text-muted-foreground text-pretty">
-					{d("counter.description")}
+					{d("counter.form.description")}
 				</p>
 			</div>
 
